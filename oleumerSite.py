@@ -1,15 +1,10 @@
+
 from flask import Flask, render_template                 #import
-
-app = Flask(__name__)                                    #calling
-
-@app.route("/", methods=['GET', 'POST'])                 #initialising
 def home():                                              #function call
 
     return render_template('home.html')                  #return and calling HTML page (designed template)
 
-if __name__ == "__main__":
-    app.run() 
-    
+ 
 #functions for calling, processing the model and prediction function
 def load_image(img_path):
 
@@ -43,3 +38,31 @@ def prediction(img_path):
         return "Bad"
     else:
         return "Good"
+
+
+app = Flask(__name__)                                    #calling
+get_model()
+
+
+@app.route("/", methods=['GET', 'POST'])                 #initialising
+def home():                                              #function call
+
+    return render_template('home.html')                  #return and calling HTML page (designed template)
+    
+@app.route("/predict", methods = ['GET','POST'])
+def predict():
+    
+    if request.method == 'POST':
+        
+        file = request.files['file']
+        filename = file.filename
+        file_path = os.path.join(r'C:/Users/nEW u/Flask/static/', filename)                       #slashes should be handeled properly
+        file.save(file_path)
+        print(filename)
+        product = prediction(file_path)
+        print(product)
+        
+    return render_template('predict.html', product = product, user_image = file_path)            #file_path can or may used at the place of filename
+
+if __name__ == "__main__":
+    app.run() 
