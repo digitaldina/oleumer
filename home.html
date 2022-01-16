@@ -5,10 +5,10 @@
 </head>
 <body style="font-family:Helvetica,Arial, sans-serif">
     <div class="col-sm">
-      <h1>oleumer</h1>
+     <img src="oleumer.png" style="margin:auto;  text-align: center;">
     </div>
-    <h4>oleumer is a model for early oil spill detection in satelliate imagery using Deep learning through a Deep CNN architecture. This model could be applied as an extension to services such as Google Earth Engine or NASA's public satelliate imagery intiatives as well. This way the model is monitoring real time images of bodies of water to detect oil spills before they become disastrous. You can upload an image below to test the model's accuracy at recognizing an oil spill!</h4>
-    <div class="col-sm">
+    <p style="padding: 5%">  oleumer is a model for early oil spill detection in satelliate imagery using Deep learning through a Deep CNN architecture. This model could be applied as an extension to services such as Google Earth Engine or NASA's public satelliate imagery intiatives as well. This way the model is monitoring real time images of bodies of water to detect oil spills before they become disastrous. You can upload an image below to test the model's accuracy at recognizing an oil spill!</p>
+    <div class="col-sm" style="margin:auto;  text-align: center;">
       <form action = "/predict" method = "post" enctype="multipart/form-data">
           <input type="file" name="file" />
           <input type = "submit" value="Upload">
