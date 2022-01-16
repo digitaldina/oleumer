@@ -1,13 +1,13 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Upload Image</title>
+    <title>oleumer</title>
 </head>
-<body>
+<body style="font-family:Helvetica,Arial, sans-serif">
     <div class="col-sm">
-      <h1><span class="badge badge-danger">Quality Inspection</span></h1>
+      <h1>oleumer</h1>
     </div>
-
+    <h4>oleumer is a model for early oil spill detection in satelliate imagery using Deep learning through a Deep CNN architecture. This model could be applied as an extension to services such as Google Earth Engine or NASA's public satelliate imagery intiatives as well. This way the model is monitoring real time images of bodies of water to detect oil spills before they become disastrous. You can upload an image below to test the model's accuracy at recognizing an oil spill!</h4>
     <div class="col-sm">
       <form action = "/predict" method = "post" enctype="multipart/form-data">
           <input type="file" name="file" />
